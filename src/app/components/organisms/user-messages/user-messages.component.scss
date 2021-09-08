@@ -1,0 +1,24 @@
+// message types
+.info {
+  background-color: #0099ff;
+}
+
+.error {
+  background-color: #dd1919;
+}
+
+.success {
+  background-color: rgb(88, 175, 61);
+}
+
+.warning {
+  background-color: orange;
+}
+
+.message-card {
+  color: #eee;
+  padding: 1em;
+  border-radius: 5px;
+  max-width: 30em;
+  margin: 1em auto;
+}

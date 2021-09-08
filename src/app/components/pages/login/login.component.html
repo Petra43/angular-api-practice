@@ -1,0 +1,20 @@
+<section>
+  <div *ngIf="isCreateUser">
+    <h2>Create User</h2>
+    <label>
+      Username
+      <input type="text" [(ngModel)]="username"/>
+    </label>
+    <button (click)="createUser()">Create User</button>
+    <button (click)="isCreateUser = false">I already have an account</button>
+  </div>
+  <div *ngIf="!isCreateUser">
+    <h2>Login</h2>
+    <label>
+      Username
+      <input type="text" [(ngModel)]="username"/>
+    </label>
+    <button (click)="login()" >Login</button>
+    <button (click)="isCreateUser = true" >create new account</button>
+  </div>
+</section>
