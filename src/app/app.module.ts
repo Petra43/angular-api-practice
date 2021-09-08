@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { UserMessagesComponent } from './components/organisms/user-messages/user-messages.component';
+import { HeaderBarComponent } from './components/organisms/header-bar/header-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    UserMessagesComponent
+    UserMessagesComponent,
+    HeaderBarComponent
   ],
   imports: [
     BrowserModule,
