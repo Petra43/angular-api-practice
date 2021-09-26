@@ -1,0 +1,20 @@
+.board-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.board-card {
+  background-color: #ddd;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 5px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+}

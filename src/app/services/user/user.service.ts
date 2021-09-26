@@ -30,20 +30,20 @@ export class UserService {
     return this.http.get<User[]>(`${baseUrl}${usersUrl}?name=${name}`).toPromise();
   }
 
-  public async createUser(user: User){
-    const newUser = await this.http.post<User>(baseUrl + usersUrl, user).toPromise();
+  public async createUser(username: string){
+    const newUser = await this.http.post<User>(baseUrl + usersUrl, username).toPromise();
     return newUser
   }
 
   public async login(name: string) {
     let user = await this.getUser(name)
-
     await this.SignedInUser.next(user[0])
     this.router.navigate(['dashboard'])
   }
 
   public logout() {
     this,this.SignedInUser.next(undefined)
+    this.router.navigate(['login'])
   }
 
 }

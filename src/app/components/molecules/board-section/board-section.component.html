@@ -1,0 +1,17 @@
+<div class="section" *ngIf="section">
+  <div class="section-title">
+
+    <app-editable-field-h3 [value]="section.title" (newValueEvent)="updateSectionTitle($event)"></app-editable-field-h3>
+
+  </div>
+  <div class="section-ticket-list">
+    <app-ticket-card
+      class="ticket"
+      *ngFor="let ticket of section.tickets"
+      [ticket]="ticket">
+    </app-ticket-card>
+    <div class="ticket" (click)="addTicket()">
+      <h4>add ticket</h4>
+    </div>
+  </div>
+</div>

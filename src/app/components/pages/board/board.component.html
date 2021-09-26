@@ -1,0 +1,14 @@
+<div *ngIf="board" class="board-container">
+  <div class="section-list" >
+    <app-board-section
+      *ngFor="let section of board.sections"
+      [section]="section">
+    </app-board-section>
+    <div class="section new" (click)="addSection()">
+      <h4>+ Add Section</h4>
+    </div>
+  </div>
+  <div class="toolbar">
+    <button (click)="log()"> log</button>
+  </div>
+</div>

@@ -2,4 +2,24 @@ header {
   box-shadow: 2px 2px 10px;
   width: 100vw;
   height: 4em;
+  display: flex;
+  align-items: center;
+  padding-inline: 1rem;
+  box-sizing: border-box;
+  z-index: 999;
+  position:relative;
+  justify-content: space-between;
+}
+
+header > div {
+  flex-basis: 33%;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.login-info {
+  display: flex;
+  justify-content: end;
 }

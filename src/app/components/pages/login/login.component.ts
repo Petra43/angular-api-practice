@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrentPageService } from 'src/app/services/current-page/current-page.service';
 import { UserMessagingService } from 'src/app/services/user-messaging/user-messaging.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { User } from 'src/app/types/user';
@@ -19,22 +20,24 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private messageService: UserMessagingService,
-    private userService: UserService) { }
+    private userService: UserService,
+    private currentPage: CurrentPageService) { }
 
   ngOnInit(): void {
+    this.currentPage.setCurrentPage('Login')
   }
 
   /**
    * Check if the username exists and is long enough
    */
-  private nameIsValid() {
+  private async nameIsValid() {
     let isValid = true;
     let message = ''
 
     if (this.username.length < 3) {
       isValid = false;
       message = 'username is to short'
-    } else if (this.userExists()) {
+    } else if (await this.userExists()) {
       isValid = false;
       message = `username ${this.username} already exists`
     }
@@ -50,13 +53,14 @@ export class LoginComponent implements OnInit {
         ).length != 0
   }
 
-  public createUser() {
+  public async createUser() {
 
-    const userValidation = this.nameIsValid()
+    const userValidation = await this.nameIsValid()
 
     if (userValidation.isValid) {
-      this.userService.createUser({name: this.username});
-      this.messageService.logInfo(`created user: ${this.username}`);
+      await this.userService.createUser(this.username);
+      this.messageService.logSuccess(`created user: ${this.username}`);
+      await this.userService.login(this.username)
     } else {
       this.messageService.logError(userValidation.message);
     }

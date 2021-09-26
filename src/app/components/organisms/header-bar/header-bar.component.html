@@ -1,3 +1,12 @@
+
 <header>
-  
+  <div class="logo">
+    <h1>Practice App</h1>
+  </div>
+  <div class="page-title">
+    <h1>{{pageTitle}}</h1>
+  </div>
+  <div class="login-info">
+    <button *ngIf="showLogoutBtn" (click)="logout()">Logout</button>
+  </div>
 </header>

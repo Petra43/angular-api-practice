@@ -1,1 +1,18 @@
-<p>dashboard works!</p>
+<section>
+  <div>
+    <h2>Board list</h2>
+    <div class="board-list">
+      <a *ngFor="let board of boardList" [routerLink]="['/board', board.id]">
+        <div class="board-card" >
+          {{board.name}}
+        </div>
+      </a>
+      <a (click)="createBoard()">
+        <div class="board-card">
+          <h3>New board</h3>
+          <div class="icon">+</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

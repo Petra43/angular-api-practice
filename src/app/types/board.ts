@@ -1,16 +1,16 @@
 export type Board = {
   ownerId: number;
   name: string;
-  id: number;
+  id?: number;
   sections: Section[];
 }
 
 export type Section = {
   title: string;
-  cards: Card[];
+  tickets: Ticket[];
 }
 
-export type Card = {
+export type Ticket = {
   title: string;
   assignedUserId: number;
 }

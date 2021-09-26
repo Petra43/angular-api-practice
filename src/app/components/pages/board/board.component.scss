@@ -1,0 +1,24 @@
+.section-list {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1rem;
+}
+
+
+
+.board-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.toolbar {
+  width: 4rem;
+  background-color: coral;
+}
+
+

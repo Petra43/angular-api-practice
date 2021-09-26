@@ -1,0 +1,10 @@
+<h3
+  *ngIf="!isEditing"
+  (click)="editValue($event)">
+{{value}}
+</h3>
+<input
+  *ngIf="isEditing"
+  [(ngModel)]="value"
+  (focusout)="cancelEditing($event)"
+  (keyup)="saveValue($event)">

@@ -1,5 +1,7 @@
-<app-header-bar></app-header-bar>
-<div>
-  <router-outlet></router-outlet>
+<div class="wrapper">
+  <app-header-bar></app-header-bar>
+  <div class="content">
+    <router-outlet></router-outlet>
+    <app-user-messages></app-user-messages>
+  </div>
 </div>
-<app-user-messages></app-user-messages>

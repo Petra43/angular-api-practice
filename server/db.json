@@ -7,6 +7,39 @@
     {
       "name": "test",
       "id": 2
+    },
+    {
+      "name": "test2",
+      "id": 3
+    },
+    {
+      "name": "test3",
+      "id": 4
+    }
+  ],
+  "boards": [
+    {
+      "ownerId": 2,
+      "name": "new board",
+      "sections": [],
+      "id": 1
+    },
+    {
+      "ownerId": 1,
+      "name": "new board",
+      "sections": [],
+      "id": 2
+    },
+    {
+      "ownerId": 2,
+      "name": "Test board",
+      "sections": [
+        {"title": "test section 1", "tickets": [] },
+        {"title": "test section 2", "tickets": [
+          {"title": "test ticket", "assignedUserId": 3}
+        ]}
+      ],
+      "id": 3
     }
   ]
 }
